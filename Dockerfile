@@ -21,20 +21,6 @@ RUN pnpm run build
 # Remove dev dependencies
 RUN pnpm prune --prod
 
-# Production stage
-FROM node:24-trixie-slim
-
-WORKDIR /app
-
-# Copy package files
-COPY package.json pnpm-lock.yaml* ./
-
-# Copy only production dependencies from builder
-COPY --from=builder /app/node_modules ./node_modules
-
-# Copy built output
-COPY --from=builder /app/.output ./.output
-
 # Expose the application port
 EXPOSE 3000
 
@@ -42,4 +28,4 @@ EXPOSE 3000
 ENV NODE_ENV=production
 
 # Start the application
-CMD ["npm", "run", "start"]
+CMD ["pnpm", "start"]
