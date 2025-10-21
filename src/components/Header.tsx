@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { ChevronDown, LogIn, Server, ServerCog } from "lucide-react";
 import { Button } from "./ui/button";
 import {
@@ -15,18 +14,22 @@ const services = [
 		title: "n8n",
 		href: "https://n8n.hinry.xyz",
 	},
+	{
+		title: "ez",
+		href: "https://ez.hinry.xyz",
+	},
 ];
 
 export default function Header() {
 	return (
 		<header className="sticky top-0 z-50 flex w-full justify-center">
 			<div className="mx-auto flex h-14 max-w-xl w-full items-center justify-between px-4 border-b border-x rounded-b-xl bg-background/70 backdrop-blur-[2px] shadow-lg supports-[backdrop-filter]:bg-background/50">
-				<Link
-					to="/"
-					className="select-none text-2xl font-mono font-extrabold leading-none tracking-tight text-transparent drop-shadow-sm bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text"
+				<a
+					href="https://www.youtube.com/watch?v=GI7Bd2TWwsA"
+					className="select-none text-2xl font-wdxl font-bold leading-none tracking-tight text-transparent drop-shadow-sm bg-gradient-to-r from-teal-500 via-pink-500 to-red-500 bg-clip-text"
 				>
-					HINRYXYZ
-				</Link>
+					本気でやれ もっと欲張れ
+				</a>
 
 				<div className="flex items-center gap-2">
 					{/* Mobile: Dropdown Navigation */}
@@ -56,7 +59,7 @@ export default function Header() {
 					{/* Tablet/Desktop: Individual Links */}
 					<div className="hidden md:flex items-center gap-1.5">
 						{services.map((service) => (
-							<Button asChild variant="ghost" size="sm" key={service.href}>
+							<Button asChild variant="outline" size="sm" key={service.href}>
 								<a href={service.href}>{service.title}</a>
 							</Button>
 						))}

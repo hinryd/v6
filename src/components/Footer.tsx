@@ -11,7 +11,7 @@ export default function Footer() {
 						❤
 					</span>
 				</p>
-				<p className="space-x-3 font-mono">
+				<p className="text-xs space-x-2 font-mono">
 					<a
 						className="hover:underline"
 						href="https://tanstack.com/start"

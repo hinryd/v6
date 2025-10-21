@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DemoMcpTodosRouteImport } from './routes/demo.mcp-todos'
+import { Route as ApiWakatimeRouteImport } from './routes/api.wakatime'
 import { Route as ApiMcpTodosRouteImport } from './routes/api.mcp-todos'
 import { Route as ApiDemoNamesRouteImport } from './routes/api.demo-names'
 import { Route as DemoStartServerFuncsRouteImport } from './routes/demo.start.server-funcs'
@@ -30,6 +31,11 @@ const IndexRoute = IndexRouteImport.update({
 const DemoMcpTodosRoute = DemoMcpTodosRouteImport.update({
   id: '/demo/mcp-todos',
   path: '/demo/mcp-todos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiWakatimeRoute = ApiWakatimeRouteImport.update({
+  id: '/api/wakatime',
+  path: '/api/wakatime',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiMcpTodosRoute = ApiMcpTodosRouteImport.update({
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/mcp': typeof McpRoute
   '/api/demo-names': typeof ApiDemoNamesRoute
   '/api/mcp-todos': typeof ApiMcpTodosRoute
+  '/api/wakatime': typeof ApiWakatimeRoute
   '/demo/mcp-todos': typeof DemoMcpTodosRoute
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
   '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/mcp': typeof McpRoute
   '/api/demo-names': typeof ApiDemoNamesRoute
   '/api/mcp-todos': typeof ApiMcpTodosRoute
+  '/api/wakatime': typeof ApiWakatimeRoute
   '/demo/mcp-todos': typeof DemoMcpTodosRoute
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
   '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/mcp': typeof McpRoute
   '/api/demo-names': typeof ApiDemoNamesRoute
   '/api/mcp-todos': typeof ApiMcpTodosRoute
+  '/api/wakatime': typeof ApiWakatimeRoute
   '/demo/mcp-todos': typeof DemoMcpTodosRoute
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
   '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/mcp'
     | '/api/demo-names'
     | '/api/mcp-todos'
+    | '/api/wakatime'
     | '/demo/mcp-todos'
     | '/demo/start/api-request'
     | '/demo/start/server-funcs'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/mcp'
     | '/api/demo-names'
     | '/api/mcp-todos'
+    | '/api/wakatime'
     | '/demo/mcp-todos'
     | '/demo/start/api-request'
     | '/demo/start/server-funcs'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/mcp'
     | '/api/demo-names'
     | '/api/mcp-todos'
+    | '/api/wakatime'
     | '/demo/mcp-todos'
     | '/demo/start/api-request'
     | '/demo/start/server-funcs'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   McpRoute: typeof McpRoute
   ApiDemoNamesRoute: typeof ApiDemoNamesRoute
   ApiMcpTodosRoute: typeof ApiMcpTodosRoute
+  ApiWakatimeRoute: typeof ApiWakatimeRoute
   DemoMcpTodosRoute: typeof DemoMcpTodosRoute
   DemoStartApiRequestRoute: typeof DemoStartApiRequestRoute
   DemoStartServerFuncsRoute: typeof DemoStartServerFuncsRoute
@@ -142,6 +155,13 @@ declare module '@tanstack/react-router' {
       path: '/demo/mcp-todos'
       fullPath: '/demo/mcp-todos'
       preLoaderRoute: typeof DemoMcpTodosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/wakatime': {
+      id: '/api/wakatime'
+      path: '/api/wakatime'
+      fullPath: '/api/wakatime'
+      preLoaderRoute: typeof ApiWakatimeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/mcp-todos': {
@@ -180,6 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   McpRoute: McpRoute,
   ApiDemoNamesRoute: ApiDemoNamesRoute,
   ApiMcpTodosRoute: ApiMcpTodosRoute,
+  ApiWakatimeRoute: ApiWakatimeRoute,
   DemoMcpTodosRoute: DemoMcpTodosRoute,
   DemoStartApiRequestRoute: DemoStartApiRequestRoute,
   DemoStartServerFuncsRoute: DemoStartServerFuncsRoute,

@@ -1,3 +1,4 @@
+import WindsurfLogo from "../assets/windsurf-black-symbol.svg";
 import Marquee from "./Marquee";
 
 const techStack1 = [
@@ -7,14 +8,12 @@ const techStack1 = [
 			"https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749764539/nextjs_gyqxdo.png",
 	},
 	{
-		name: "Cloudinary",
-		iconUrl:
-			"https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763872/cloudinary_jcjz1e.webp",
+		name: "Flutter",
+		iconUrl: "https://cdn.svglogos.dev/logos/flutter.svg",
 	},
 	{
-		name: "Auth.js",
-		iconUrl:
-			"https://res.cloudinary.com/dbb7pkwdv/image/upload/v1749763872/authjs_g9rfwm.webp",
+		name: "Windsurf",
+		iconUrl: WindsurfLogo,
 	},
 	{
 		name: "PostgreSQL",
@@ -69,11 +68,11 @@ export default function Stacks() {
 	return (
 		<div className="mt-3 mx-auto flex flex-col gap-2.5 max-w-xl">
 			<div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-				<Marquee pauseOnHover className="[--duration:35s]">
+				<Marquee pauseOnHover className="[--duration:90s]">
 					{techStack1.map((tech) => (
 						<div
 							key={tech.name}
-							className="flex items-center gap-[7px] text-sm"
+							className="flex items-center gap-[7px] text-xs"
 						>
 							<img
 								alt=""
@@ -86,11 +85,11 @@ export default function Stacks() {
 						</div>
 					))}
 				</Marquee>
-				<Marquee reverse pauseOnHover className="[--duration:35s]">
+				<Marquee reverse pauseOnHover className="[--duration:90s]">
 					{techStack2.map((tech) => (
 						<div
 							key={tech.name}
-							className="flex items-center gap-[7px] text-sm"
+							className="flex items-center gap-[7px] text-xs"
 						>
 							<img
 								alt=""
