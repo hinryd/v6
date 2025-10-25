@@ -49,9 +49,9 @@ function App() {
 
     const handleTabChange = (value: string) => {
         setTab(value as typeof tab)
-        if (typeof window !== "undefined") {
-            history.replaceState(null, "", `#${value}`)
-        }
+        // if (typeof window !== "undefined") {
+        //     history.replaceState(null, "", `#${value}`)
+        // }
     }
 
     const socials = [
@@ -63,7 +63,7 @@ function App() {
         },
         // { name: "Twitter", href: "https://x.com/rehnyx", icon: Twitter },
         { name: "Website", href: "https://hinry.xyz", icon: Globe },
-        { name: "Email", href: "lkhh@protonmail.com", icon: Mail },
+        { name: "Email", href: "mailto:lkhh@protonmail.com", icon: Mail },
     ] as const
 
     const projects = [
@@ -210,7 +210,7 @@ function App() {
                     {/* <BadgeCheck className="size-6 text-blue-500 fill-blue-500/20" /> */}
                 </h1>
                 <p className="text-sm text-muted-foreground">
-                    Engineer • Builder • Writer
+                    Engineer • Thinker • Learner
                 </p>
                 {/* <p className="mt-1 text-xs text-muted-foreground flex items-center">
 					<MapPin className="size-3 mr-1" />
@@ -266,7 +266,7 @@ function App() {
                 <TabsList className="mx-auto bg-slate-100 dark:bg-transparent w-80">
                     <TabsTrigger value="projects">Projects</TabsTrigger>
                     <TabsTrigger value="experience">Experience</TabsTrigger>
-                    <TabsTrigger value="blog">Blog</TabsTrigger>
+                    {/* <TabsTrigger value="blog">Blog</TabsTrigger> */}
                 </TabsList>
 
                 <TabsContent value="projects" className="mt-4 space-y-3">
