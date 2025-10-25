@@ -1,6 +1,6 @@
-import { TanstackDevtools } from "@tanstack/react-devtools"
+// import { TanstackDevtools } from "@tanstack/react-devtools"
+// import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
-import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
 
 import Footer from "../components/Footer"
 import Header from "../components/Header"
@@ -127,7 +127,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                         <ModeToggle />
                     </div>
 
-                    <TanstackDevtools
+                    {/* <TanstackDevtools
                         config={{
                             position: "bottom-left",
                         }}
@@ -137,7 +137,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                                 render: <TanStackRouterDevtoolsPanel />,
                             },
                         ]}
-                    />
+                    /> */}
                 </ThemeProvider>
                 <Scripts />
             </body>
